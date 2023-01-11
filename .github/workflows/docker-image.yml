@@ -27,5 +27,5 @@ jobs:
         
     - name: Build the Docker image
       run: |
-        docker build . --file Dockerfile --tag ghcr.io/baesky/dldev:$IMAGE_TAG
-        docker push ghcr.io/baesky/dldev:$IMAGE_TAG
+        docker build . --file Dockerfile --tag ghcr.io/baesky/dldev:${{ IMAGE_TAG }}
+        docker push ghcr.io/baesky/dldev:${{ IMAGE_TAG }}
