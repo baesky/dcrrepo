@@ -37,7 +37,9 @@ RUN echo 'Successfully installed miniconda...' && echo -n 'Conda version: '
 RUN ${condapath}/bin/conda --version && echo -e '\n' 
 
 #安装pytorch，tensorflow-gpu，jupyter
-Run ${condapath}/bin/conda install -y pytorch tensorflow-gpu notebook
+Run ${condapath}/bin/conda install -y pytorch tensorflow-gpu
+Run ${condapath}/bin/conda install -y -c conda-forge notebook 
+Run ${condapath}/bin/condainstall -y -c conda-forge nb_conda_kernels
 
 RUN exec bash
 
