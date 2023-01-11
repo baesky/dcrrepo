@@ -7,11 +7,14 @@ on:
       - '**.md'
   pull_request:
     branches: [ "main" ]
+  workflow_dispatch:
+    inputs:
+      image_tag:
+      description: specify a tag for new image
+      required: true
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
