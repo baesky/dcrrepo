@@ -1,7 +1,7 @@
 name: Docker Image CI
 
 env:
-  IMAGE_TAG: ${{ (date +%s) }}
+  IMAGE_TAG: $(date +%s)
 
 on:
   push:
@@ -27,5 +27,5 @@ jobs:
         
     - name: Build the Docker image
       run: |
-        docker build . --file Dockerfile --tag ghcr.io/baesky/dldev:$IMAGE_TAG
-        docker push ghcr.io/baesky/dldev:$IMAGE_TAG
+        docker build . --file Dockerfile --tag ghcr.io/baesky/dldev:${{ env.IMAGE_TAG }}
+        docker push ghcr.io/baesky/dldev:${{ env.IMAGE_TAG }}
