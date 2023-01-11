@@ -5,7 +5,7 @@ ARG pwd=uework@2022
 ARG condapath=/home/miniconda
 #images info
 LABEL version="1.0"
-LABEL description='base on nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04'
+LABEL org.opencontainers.image.description 'base on nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04'
 
 #安装依赖
 RUN  apt-get update && apt-get install -y sudo
