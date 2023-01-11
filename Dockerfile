@@ -34,5 +34,5 @@ RUN wget https://repo.anaconda.com/miniconda/Miniconda3-py38_4.12.0-Linux-x86_64
 RUN echo ${pwd}|sudo -S bash ~/miniconda.sh -b -p /home/miniconda 
 RUN ${condapath}/bin/conda init $(echo $SHELL | awk -F '/' '{print $NF}') 
 RUN echo 'Successfully installed miniconda...' && echo -n 'Conda version: ' 
-RUN ~/miniconda/bin/conda --version && echo -e '\n' 
+RUN ${condapath}/bin/conda --version && echo -e '\n' 
 RUN exec bash
