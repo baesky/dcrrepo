@@ -1,8 +1,5 @@
 name: Docker Image CI
 
-env:
-  IMAGE_TAG: $(date +%s)
-
 on:
   push:
     branches: [ "main" ]
@@ -27,5 +24,5 @@ jobs:
         
     - name: Build the Docker image
       run: |
-        docker build . --file Dockerfile --tag ghcr.io/baesky/dldev:${{ env.IMAGE_TAG }}
-        docker push ghcr.io/baesky/dldev:${{ env.IMAGE_TAG }}
+        docker build . --file Dockerfile --tag ghcr.io/baesky/dldev:${{ env.GITHUB_RUN_ID }}
+        docker push ghcr.io/baesky/dldev:${{ env.GITHUB_RUN_ID }}
