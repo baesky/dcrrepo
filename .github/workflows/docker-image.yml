@@ -10,9 +10,9 @@ on:
   workflow_dispatch:
     inputs:
       image_tag:
-      description: specify a tag for new image
-      required: true
-
+        description: specify a tag for new image
+        required: true
+  
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -29,5 +29,5 @@ jobs:
         
     - name: Build the Docker image
       run: |
-        docker build . --file Dockerfile --tag ghcr.io/baesky/dldev:$GITHUB_RUN_ID
-        docker push ghcr.io/baesky/dldev:$GITHUB_RUN_ID
+        docker build . --file Dockerfile --tag ghcr.io/baesky/dldev:${{ github.events.inputs.image_tag }}
+        docker push ghcr.io/baesky/dldev:$${{ github.events.inputs.image_tag }}
