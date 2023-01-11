@@ -39,7 +39,7 @@ RUN ${condapath}/bin/conda --version && echo -e '\n'
 #安装pytorch，tensorflow-gpu，jupyter
 Run echo ${pwd}|sudo -S ${condapath}/bin/conda install -y pytorch tensorflow-gpu
 Run echo ${pwd}|sudo -S ${condapath}/bin/conda install -y -c conda-forge notebook 
-Run echo ${pwd}|sudo -S ${condapath}/bin/condainstall -y -c conda-forge nb_conda_kernels
+Run echo ${pwd}|sudo -S ${condapath}/bin/conda install -y -c conda-forge nb_conda_kernels
 
 RUN exec bash
 
